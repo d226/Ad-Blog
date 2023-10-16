@@ -7,11 +7,12 @@ import {
   TableRow,
   TableCell,
   Paper,
-  Button,
   Box,
   Stack,
   TableSortLabel,
   IconButton,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import TableChartIcon from "@mui/icons-material/TableChart";
 import DataUsageIcon from "@mui/icons-material/DataUsage";
@@ -28,6 +29,11 @@ function createData(gender, data1, data2, data3, data4) {
 }
 
 function MyTable() {
+  const [viewType, setViewType] = useState("table");
+
+  const handleViewChange = (event) => {
+    setViewType(event.target.value);
+  };
   const [sortConfig, setSortConfig] = useState({
     key: null,
     direction: "asc",
@@ -65,7 +71,21 @@ function MyTable() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell colSpan={5}>Ad Insights</TableCell>
+            <TableCell colSpan={5}>
+              <Stack direction="row" justifyContent="space-around">
+                <Box>Ad Insights</Box>
+                <Box>
+                  <Select
+                    value={viewType}
+                    onChange={handleViewChange}
+                    sx={{ width: "130px", height: "20px" }}
+                  >
+                    <MenuItem value="table">Table View</MenuItem>
+                    <MenuItem value="chart">Chart View</MenuItem>
+                  </Select>
+                </Box>
+              </Stack>
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>

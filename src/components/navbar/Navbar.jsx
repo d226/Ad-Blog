@@ -96,10 +96,20 @@ function Navbar(props) {
                 sx={{ display: { xs: "none", sm: "block" } }}
               >
                 <Button sx={{ color: "black", fontWeight: "bold" }}>
-                  <Link to="/dashboard">Dashboard</Link>
+                  <Link
+                    to="/dashboard"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Dashboard
+                  </Link>
                 </Button>
                 <Button sx={{ color: "black", fontWeight: "bold" }}>
-                  <Link to="/create-ads">Create Ads</Link>
+                  <Link
+                    to="/create-ads"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Create Ads
+                  </Link>
                 </Button>
               </Stack>
             </Stack>
