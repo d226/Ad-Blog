@@ -15,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create-ads" element={<CreateAds />} />
-          <Route path="/create-text-ads" component={<CreateTextAds />} />
-          <Route path="/create-media-ads" component={<CreateMediaAds />} />
+          <Route path="/create-text-ads" element={<CreateTextAds />} />
+          <Route path="/create-media-ads" element={<CreateMediaAds />} />
         </Routes>
       </Router>
     </div>
